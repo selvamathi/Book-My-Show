@@ -1,0 +1,13 @@
+
+     <h1 className="text-8xl">Tailwind Integrated</h1>
+     <h1 className="text-5xl">Tailwind Integrated</h1>
+     <button className="border-2 px-2 py-1 border-adi-500 md:border-red-500 rounded bg-blue-500 md:bg-red-500 text-white hover:bg-transparent hover:border-2 hover:text-blue-500 outline-none focus:outline-line focus:ring focus:border-blue-300 md:focus:border-red-500 lg:bg-green-500 lg:border-green-500 lg:hover:text-green lg:focus:border-green-500">Click!</button>
+  exact only returns the exact component that is required component only
+
+  browser router gives the responsibility to the route
+
+
+
+
+  moviehero completed fully
+  
