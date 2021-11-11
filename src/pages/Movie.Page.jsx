@@ -61,7 +61,7 @@ const MoviePage = () => {
             {
                 breakpoint: 600,
                 settings: {
-                    slidesToShow: 5,
+                    slidesToShow: 3,
                     slidesToScroll: 2,
                     initialSlide: 2,
                 },
@@ -102,7 +102,7 @@ const MoviePage = () => {
             {
                 breakpoint: 480,
                 settings: {
-                    slidesToShow: 3,
+                    slidesToShow: 2,
                     slidesToScroll: 1,
                 },
             },
