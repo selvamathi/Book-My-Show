@@ -32,7 +32,7 @@ const PosterSlider = (props) => {
                 settings: {
                     slidesToShow: 2,
                     slidesToScroll: 1,
-                    initialSlide: 3,
+                    initialSlide: 2,
                 },
             },
         ],
