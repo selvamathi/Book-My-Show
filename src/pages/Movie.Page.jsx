@@ -1,20 +1,22 @@
-import React, {useContext, useEffect, useState} from "react";
+import React, { useContext, useEffect, useState } from "react";
 import Slider from "react-slick";
+import { useParams } from "react-router-dom";
 import axios from "axios";
-import { useParams} from "react-router-dom";
+
+//icons
 import { FaCcVisa, FaCcApplePay } from "react-icons/fa";
 
+//Components
 import MovieHero from "../components/MovieHero/MovieHero.Component";
 import Cast from "../components/Cast/Cast.Component";
 import PosterSlider from "../components/PosterSlider/PosterSlider.Component";
 
 //Context
-import {MovieContext} from '../context/Movie.context';
+import { MovieContext } from "../context/Movie.context";
 
 const MoviePage = () => {
-    const {movie} = useContext(MovieContext);
-    const {id} = useParams()
-    
+    const { movie } = useContext(MovieContext);
+    const { id } = useParams();
     const [cast, setCast] = useState([]);
     const [similarMovies, setSimilarMovies] = useState([]);
     const [recommended, setRecommended] = useState([]);
@@ -27,21 +29,23 @@ const MoviePage = () => {
         requestCast();
     }, [id]);
 
-    useEffect(()=>{
-        const requestSimilarMovies = async() => {
+    useEffect(() => {
+        const requestSimilarMovies = async () => {
             const getSimilarMovies = await axios.get(`/movie/${id}/similar`);
             setSimilarMovies(getSimilarMovies.data.results);
-        }
+        };
         requestSimilarMovies();
-    },[id]);
+    }, [id]);
 
-    useEffect(()=>{
-        const requestRecommendedMovies = async() => {
-            const getRecommendedMovies = await axios.get(`/movie/${id}/recommendations`);
+    useEffect(() => {
+        const requestRecommendedMovies = async () => {
+            const getRecommendedMovies = await axios.get(
+                `/movie/${id}/recommendations`
+            );
             setRecommended(getRecommendedMovies.data.results);
-        }
+        };
         requestRecommendedMovies();
-    },[id]);
+    }, [id]);
 
     const settingsCast = {
         infinite: false,
@@ -61,7 +65,7 @@ const MoviePage = () => {
             {
                 breakpoint: 600,
                 settings: {
-                    slidesToShow: 3,
+                    slidesToShow: 5,
                     slidesToScroll: 2,
                     initialSlide: 2,
                 },
@@ -102,7 +106,7 @@ const MoviePage = () => {
             {
                 breakpoint: 480,
                 settings: {
-                    slidesToShow: 2,
+                    slidesToShow: 3,
                     slidesToScroll: 1,
                 },
             },
@@ -117,12 +121,10 @@ const MoviePage = () => {
                     <h1 className="text-gray-800 font-bold text-2xl">
                         About the movie
                     </h1>
-                    <p>
-                        {movie.overview}                        
-                    </p>
+                    <p>{movie.overview}</p>
                 </div>
 
-                <div className="my-8">
+                <div classname="my-8">
                     <hr />
                 </div>
 
@@ -131,7 +133,7 @@ const MoviePage = () => {
                         Applicable Offers
                     </h2>
                     <div className="flex flex-col gap-3 lg:flex-row">
-                        <div className="flex item-start gap-2 bg-yellow-100 p-3 border-yellow-400 border-dashed border-2 rounded-md">
+                        <div className="flex item-start gap-2 bg-yellow-100 p-3 border-ywllow-400 border-dashed border-2 rounded-md">
                             <div className="w-8 h-8">
                                 <FaCcVisa className="w-fill h-fill" />
                             </div>
@@ -145,7 +147,7 @@ const MoviePage = () => {
                                 </p>
                             </div>
                         </div>
-                        <div className="flex item-start gap-2 bg-yellow-100 p-3 border-yellow-400 border-dashed border-2 rounded-md">
+                        <div className="flex item-start gap-2 bg-yellow-100 p-3 border-ywllow-400 border-dashed border-2 rounded-md">
                             <div className="w-8 h-8">
                                 <FaCcApplePay className="w-full h-full" />
                             </div>
