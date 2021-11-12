@@ -16,7 +16,6 @@ const PosterSlider = (props) => {
                     slidesToShow: 3,
                     slidesToScroll: 3,
                     infinite: true,
-                    initialSlide: 5,
                 },
             },
             {
@@ -30,9 +29,8 @@ const PosterSlider = (props) => {
             {
                 breakpoint: 480,
                 settings: {
-                    slidesToShow: 2,
+                    slidesToShow: 3,
                     slidesToScroll: 1,
-                    initialSlide: 2,
                 },
             },
         ],
@@ -71,3 +69,4 @@ const PosterSlider = (props) => {
 };
 
 export default PosterSlider;
+                  
